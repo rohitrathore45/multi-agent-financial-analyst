@@ -10,5 +10,10 @@ class AgentState(TypedDict):
     sentiment: Optional[str]
 
     features: Optional[Dict]
+
+    risk: Optional[str]
+    decision: Optional[Dict]
+
+    memory: Optional[List[str]]
     
     response: Optional[str]
