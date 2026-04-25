@@ -5,5 +5,10 @@ class AgentState(TypedDict):
     ticker: Optional[str]
 
     market_data: Optional[Dict]
+
+    news: Optional[List[str]]
+    sentiment: Optional[str]
+
+    features: Optional[Dict]
     
     response: Optional[str]
