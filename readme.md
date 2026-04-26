@@ -3,6 +3,10 @@
 An intelligent **AI-powered financial analysis backend** built using **LangGraph (multi-agent architecture)**, combining **Machine Learning, LLMs, and RAG memory** to analyze stock queries and generate actionable insights.
 
 ---
+<img width="640" height="772" alt="Screenshot 2026-04-26 193818" src="https://github.com/user-attachments/assets/6f5e1e35-274e-489f-909c-f516e1c3c0cd" />
+<img width="552" height="697" alt="Screenshot 2026-04-26 193852" src="https://github.com/user-attachments/assets/48c9c7bd-b7dc-48ac-a38c-f407f6680c75" />
+<img width="559" height="690" alt="Screenshot 2026-04-26 194033" src="https://github.com/user-attachments/assets/4794199a-6037-44aa-94c6-9840893586ed" />
+
 
 # Overview
 
@@ -37,25 +41,8 @@ and returns structured financial insights:
 The system is built using a **multi-agent pipeline (LangGraph)**:
 
 ```
-User Query
-   ↓
-Data Agent (yfinance)
-   ↓
-News Agent (Tavily API)
-   ↓
-Sentiment Agent (LLM)
-   ↓
-Feature Engineering Agent
-   ↓
-Modeling Agent (XGBoost)
-   ↓
-Risk Agent
-   ↓
-Memory Agent (FAISS RAG)
-   ↓
-Decision Agent (ML + LLM hybrid)
-   ↓
-Final Structured Response
+<img width="519" height="704" alt="image" src="https://github.com/user-attachments/assets/e9110d24-efc6-4f2d-b8a8-0d6fa9c177de" />
+
 ```
 
 ---
