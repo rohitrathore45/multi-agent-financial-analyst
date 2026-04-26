@@ -17,3 +17,5 @@ class AgentState(TypedDict):
     memory: Optional[List[str]]
     
     response: Optional[str]
+
+    predicted_price: Optional[float]

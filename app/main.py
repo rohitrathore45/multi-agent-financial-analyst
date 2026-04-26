@@ -1,4 +1,5 @@
 from graph.workflow import build_graph
+import json
 
 def main():
     graph = build_graph()
@@ -9,12 +10,19 @@ def main():
         "query": query,
         "ticker": None,
         "market_data": None,
+        "news": None,
+        "sentiment": None,
+        "features": None,
+        "risk": None,
+        "decision": None,
+        "memory": None,
+        "predicted_price": None,
         "response": None
     }
 
     result = graph.invoke(state)
     print("\n RESULT : \n")
-    print(result["response"])
+    print(json.dumps(result["response"], indent=2))
 
 if __name__ == "__main__":
     main()

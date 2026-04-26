@@ -4,7 +4,7 @@ def get_stock_data(ticker: str):
     stock = yf.Ticker(ticker=ticker)
 
     info = stock.info
-    hist = stock.history(period="5d")
+    hist = stock.history(period="30d")
     return {
         "current_price": info.get("currentPrice"),
         "market_cap": info.get("marketCap"),

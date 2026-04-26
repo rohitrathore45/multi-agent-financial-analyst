@@ -9,9 +9,11 @@ def news_agent(state):
     query = f"{ticker} stock financial news latest earnings analysis"
 
     try:
-        results = client.search(query=query, limit = 3)
+        results = client.search(query=query, limit=3)
 
-        news = [r["title"] for r in results["results"]]
+        articles = results.get("results", [])
+
+        news = [r.get("title", "No title") for r in articles]
 
         if not news:
             news = ["No recent news found"]

@@ -14,5 +14,5 @@ def sentiment_agent(state):
     
     result = llm.invoke(prompt)
 
-    state["sentiment"] = result.content
+    state["sentiment"] = result.content.strip().lower()
     return state
