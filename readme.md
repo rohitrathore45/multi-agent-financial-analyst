@@ -40,10 +40,7 @@ and returns structured financial insights:
 
 The system is built using a **multi-agent pipeline (LangGraph)**:
 
-```
 <img width="519" height="704" alt="image" src="https://github.com/user-attachments/assets/e9110d24-efc6-4f2d-b8a8-0d6fa9c177de" />
-
-```
 
 ---
 
