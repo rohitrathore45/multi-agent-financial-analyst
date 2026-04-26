@@ -3,15 +3,17 @@ from langchain_openai import OpenAIEmbeddings
 from app.config import OPENAI_API_KEY
 import os
 
-embedding = OpenAIEmbeddings(api_key=OPENAI_API_KEY)
-
 DB_PATH = "faiss_index"
 
 db = None
 
+def get_embedding():
+    return OpenAIEmbeddings(api_key=OPENAI_API_KEY)
+
 def load_db():
     global db
     if os.path.exists(DB_PATH):
+        embedding = get_embedding()
         db = FAISS.load_local(
             DB_PATH,
             embedding,
@@ -31,6 +33,7 @@ def store_memory(texts):
         load_db()
 
     if db is None:
+        embedding = get_embedding()
         db = FAISS.from_texts(texts, embedding)
     else:
         db.add_texts(texts)
@@ -48,7 +51,7 @@ def retrieve_memory(query):
         print("No memory found")
         return []
     
-    docs = db.similarity_search(query=query, k=2)
+    docs = db.similarity_search(query=query, k=5)
 
     result = [doc.page_content for doc in docs]
 

@@ -1,28 +1,14 @@
-from graph.workflow import build_graph
-import json
+from dotenv import load_dotenv
+import os
+load_dotenv(os.path.join(os.getcwd(), "app", ".env"))
 
-def main():
-    graph = build_graph()
+from fastapi import FastAPI
+from app.api.routes import router
 
-    query = input("Enter your query (e.g., Analyze AAPL): ")
+app = FastAPI(
+    title="AI Financial Analyst API",
+    description="Multi-Agent AI + ML Financial System",
+    version="1.0"
+)
 
-    state = {
-        "query": query,
-        "ticker": None,
-        "market_data": None,
-        "news": None,
-        "sentiment": None,
-        "features": None,
-        "risk": None,
-        "decision": None,
-        "memory": None,
-        "predicted_price": None,
-        "response": None
-    }
-
-    result = graph.invoke(state)
-    print("\n RESULT : \n")
-    print(json.dumps(result["response"], indent=2))
-
-if __name__ == "__main__":
-    main()
+app.include_router(router)

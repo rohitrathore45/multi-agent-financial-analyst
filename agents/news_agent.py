@@ -1,9 +1,8 @@
 from tavily import TavilyClient
 from app.config import TAVILY_API_KEY
 
-client = TavilyClient(api_key=TAVILY_API_KEY)
-
 def news_agent(state):
+    client = TavilyClient(api_key=TAVILY_API_KEY)
     ticker = state['ticker']
 
     query = f"{ticker} stock financial news latest earnings analysis"

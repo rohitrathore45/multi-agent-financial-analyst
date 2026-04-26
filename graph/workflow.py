@@ -14,8 +14,6 @@ from agents.modeling_agent import modeling_agent
 from langchain_openai import ChatOpenAI
 from app.config import OPENAI_API_KEY
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=OPENAI_API_KEY)
-
 def generate_response(state: AgentState):
 
     print("Generating structured response...")
